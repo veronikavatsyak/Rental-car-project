@@ -1,14 +1,17 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import instance from './api';
 
-export const getCars = createAsyncThunk('cars/getCars', async (_, thunkAPI) => {
-  try {
-    const { data } = await instance.get('/cars');
-    return data;
-  } catch (err) {
-    return thunkAPI.rejectWithValue(err.message);
+export const getCars = createAsyncThunk(
+  'cars/getCars',
+  async ({ params }, thunkAPI) => {
+    try {
+      const { data } = await instance.get('/cars', { params });
+      return data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.message);
+    }
   }
-});
+);
 
 export const getCarById = createAsyncThunk(
   'cars/getCarById',

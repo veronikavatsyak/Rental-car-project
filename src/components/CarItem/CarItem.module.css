@@ -1,0 +1,48 @@
+.carContainer {
+  display: flex;
+  flex-direction: column;
+}
+img {
+  border-radius: 14px;
+  max-width: 276px;
+  margin-bottom: 16px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.price,
+.carName {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+}
+.price {
+  padding-right: 11px;
+}
+.carModel {
+  color: var(--button);
+  display: inline;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--gray);
+  margin-bottom: 28px;
+}
+.line {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.line span:not(:last-child)::after {
+  content: '|';
+  margin: 0 6px;
+  color: #dadde1;
+}
