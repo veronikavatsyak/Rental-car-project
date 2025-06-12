@@ -6,7 +6,7 @@ import { carsReducer } from './slice';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['cars'],
+  //   whitelist: ['favorites'],
 };
 
 const rootReducer = combineReducers({

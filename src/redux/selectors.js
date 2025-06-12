@@ -6,3 +6,4 @@ export const selectTotalCars = state => state.cars.totalCars;
 export const selectPage = state => state.cars.page;
 export const selectTotalPages = state => state.cars.totalPages;
 export const selectCar = state => state.cars.car;
+export const selectFilter = state => state.cars.filters;

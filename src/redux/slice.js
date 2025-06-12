@@ -8,12 +8,30 @@ const initialState = {
   totalPages: null,
   car: null,
   brands: [],
+  filters: {
+    brand: '',
+    price: '',
+    mileageFrom: '',
+    mileageTo: '',
+  },
   isLoading: false,
   isError: null,
 };
 export const carsSlice = createSlice({
   name: 'cars',
   initialState,
+  reducers: {
+    setFilters(state, action) {
+      state.filters = action.payload;
+      state.page = 1;
+      state.cars = [];
+    },
+    resetCars(state) {
+      state.cars = [];
+      state.page = 1;
+    },
+  },
+
   extraReducers: builder => {
     builder
       .addCase(getCars.pending, state => {
@@ -22,7 +40,11 @@ export const carsSlice = createSlice({
       })
       .addCase(getCars.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.cars = payload.cars;
+        if (payload.page === 1) {
+          state.cars = payload.cars;
+        } else {
+          state.cars = [...state.cars, ...payload.cars];
+        }
         state.totalCars = payload.totalCars;
         state.page = payload.page;
         state.totalPages = payload.totalPages;
@@ -50,4 +72,5 @@ export const carsSlice = createSlice({
   },
 });
 
+export const { setFilters, resetCars } = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;
