@@ -4,10 +4,10 @@ import css from './Header.module.css';
 
 const Header = () => {
   return (
-    <div className={css.headerContainer}>
+    <section className={css.headerContainer}>
       <Logo />
       <Navigation />
-    </div>
+    </section>
   );
 };
 
