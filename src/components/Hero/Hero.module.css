@@ -14,20 +14,24 @@
   color: var(--white);
   margin-bottom: 16px;
 }
+
 .hero {
   width: 100%;
-  max-width: 1440px;
-  height: 632px;
   background-image: url('../../assets/hero-bg-1x.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 420px;
+  position: relative;
   padding-bottom: 60px;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-grow: 1;
 }
+
 .heroContent {
   display: flex;
   flex-direction: column;

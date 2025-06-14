@@ -1,12 +1,10 @@
-import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
-
+import css from '../pages/HomePage.module.css';
 const HomePage = () => {
   return (
-    <div>
-      <Header />
+    <main className={css.home}>
       <Hero />
-    </div>
+    </main>
   );
 };
 
