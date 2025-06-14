@@ -1,6 +1,8 @@
 .carContainer {
   display: flex;
   flex-direction: column;
+  width: 276px;
+  height: auto;
 }
 img {
   border-radius: 14px;
