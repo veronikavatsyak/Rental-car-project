@@ -4,18 +4,19 @@ import { getCarBrands, getCarById, getCars } from './operations';
 const initialState = {
   cars: [],
   totalCars: null,
-  page: null,
+  page: 1,
   totalPages: null,
   car: null,
   brands: [],
   filters: {
     brand: '',
-    price: '',
-    mileageFrom: '',
-    mileageTo: '',
+    rentalPrice: '',
+    minMileage: '',
+    maxMileage: '',
   },
   isLoading: false,
   isError: null,
+  wasFiltered: false,
 };
 export const carsSlice = createSlice({
   name: 'cars',
@@ -25,10 +26,19 @@ export const carsSlice = createSlice({
       state.filters = action.payload;
       state.page = 1;
       state.cars = [];
+      state.wasFiltered = true;
+    },
+    resetFilters(state) {
+      state.filters = {
+        brand: '',
+        rentalPrice: '',
+        minMileage: '',
+        maxMileage: '',
+      };
+      state.wasFiltered = false;
     },
     resetCars(state) {
       state.cars = [];
-      state.page = 1;
     },
   },
 
@@ -39,6 +49,7 @@ export const carsSlice = createSlice({
         state.isError = null;
       })
       .addCase(getCars.fulfilled, (state, { payload }) => {
+        // console.log('✅ FULFILLED:', payload);
         state.isLoading = false;
         if (payload.page === 1) {
           state.cars = payload.cars;
@@ -46,8 +57,8 @@ export const carsSlice = createSlice({
           state.cars = [...state.cars, ...payload.cars];
         }
         state.totalCars = payload.totalCars;
-        state.page = payload.page;
-        state.totalPages = payload.totalPages;
+        state.page = Number(payload.page);
+        state.totalPages = Number(payload.totalPages);
       })
       .addCase(getCars.rejected, (state, { payload }) => {
         state.isLoading = false;
@@ -72,5 +83,5 @@ export const carsSlice = createSlice({
   },
 });
 
-export const { setFilters, resetCars } = carsSlice.actions;
+export const { setFilters, resetCars, resetFilters } = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;

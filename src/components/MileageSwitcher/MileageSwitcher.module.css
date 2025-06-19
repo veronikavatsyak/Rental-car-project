@@ -1,0 +1,25 @@
+.filtersInputs {
+  display: flex;
+}
+.mileageInput {
+  border-right: 1px solid var(--gray-light);
+  background-color: var(--inputs);
+  width: 160px;
+  height: 44px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+  padding-left: 24px;
+}
+.leftInput {
+  border-radius: 0 12px 12px 0;
+}
+.rightInput {
+  border-radius: 12px 0 0 12px;
+}
+.rightInput::placeholder,
+.leftInput::placeholder {
+  color: var(--main);
+  opacity: 1;
+}

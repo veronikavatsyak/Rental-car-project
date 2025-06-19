@@ -4,6 +4,7 @@
   column-gap: 32px;
   row-gap: 48px;
   margin-bottom: 80px;
-  justify-content: center; /* ДОДАЙ ЦЕ */
-  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
 }

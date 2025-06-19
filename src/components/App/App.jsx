@@ -5,6 +5,7 @@ import NotFoundPage from '../../pages/NotFoundPage';
 import CarPage from '../../pages/CarPage';
 import css from './App.module.css';
 import Header from '../Header/Header';
+
 const App = () => {
   return (
     <div className={css.appContainer}>

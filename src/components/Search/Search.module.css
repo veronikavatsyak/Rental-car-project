@@ -1,0 +1,16 @@
+.searchBtn {
+  background-color: var(--button);
+  color: var(--white);
+  transition: background-color 250ms linear;
+  z-index: 1001;
+  border: none;
+  display: block;
+}
+.searchBtn:hover {
+  background-color: var(--button-hover);
+}
+.searchBtn:disabled {
+  background-color: var(--gray-light);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
