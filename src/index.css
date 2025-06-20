@@ -120,6 +120,32 @@ label {
   transform: translateY(-50%) rotate(180deg);
   transition: transform 250ms ease;
 }
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 110px;
+}
+.details:last-of-type {
+  margin-bottom: 0;
+}
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
+  margin-bottom: 20px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.item {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+}
 
 html,
 body {

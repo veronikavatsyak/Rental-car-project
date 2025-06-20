@@ -35,7 +35,7 @@ const CarItem = ({ car }) => {
           <span>{formatMileage(mileage)}</span>
         </li>
       </ul>
-      <ReadMoreLink />
+      <ReadMoreLink id={car.id} />
     </div>
   );
 };

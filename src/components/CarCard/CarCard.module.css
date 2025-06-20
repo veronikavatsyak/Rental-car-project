@@ -1,0 +1,15 @@
+.cardContainer {
+  display: flex;
+  gap: 72px;
+  margin-top: 132px;
+}
+.detailsWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 488px;
+}
+.carImg {
+  border-radius: 19px;
+  max-width: 640px;
+  height: 512px;
+}

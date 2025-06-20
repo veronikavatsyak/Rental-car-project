@@ -1,0 +1,33 @@
+.carCard {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 68px;
+}
+.car,
+.rentalPrice {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: var(--main);
+  margin-bottom: 8px;
+}
+.carAddress,
+.carMileage,
+.carDesc {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+  margin-bottom: 16px;
+}
+.rentalPrice {
+  color: var(--button);
+  margin-bottom: 32px;
+}
+.carDesc {
+  margin-bottom: 0;
+}
+.addressWrap {
+  display: flex;
+  gap: 16px;
+}
