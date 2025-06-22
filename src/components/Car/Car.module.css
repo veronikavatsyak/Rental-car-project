@@ -29,5 +29,14 @@
 }
 .addressWrap {
   display: flex;
+  align-items: center;
   gap: 16px;
+}
+.locIcon {
+  transform: translateY(-8px);
+}
+.addressIconWrap {
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }

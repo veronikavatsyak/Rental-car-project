@@ -5,8 +5,11 @@ const RentalConditions = ({ car }) => {
       <ul className="list">
         {car.rentalConditions.map((item, index) => {
           return (
-            <li className="item" key={`rental-${index}`}>
-              {item}
+            <li className="iconWrap" key={`rental-${index}`}>
+              <svg className="icon" width="16" height="16">
+                <use href="/icons/symbol-defs.svg#icon-check-circle" />
+              </svg>
+              <span className="item">{item}</span>
             </li>
           );
         })}
