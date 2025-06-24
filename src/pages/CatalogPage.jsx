@@ -60,7 +60,7 @@ const CatalogPage = () => {
   };
 
   return (
-    <div className={css.container}>
+    <div className="container">
       {isLoading && <Loader />}
       <Filters />
       {cars.length === 0 && wasFiltered && !isLoading ? (

@@ -2,6 +2,7 @@ import Car from '../Car/Car';
 import AccAndFunc from '../CarDetails/AccAndFunc';
 import CarSpecifications from '../CarDetails/CarSpecifications';
 import RentalConditions from '../CarDetails/RentalConditions';
+import RentForm from '../RentForm/RentForm';
 import css from './CarCard.module.css';
 const CarCard = ({ car }) => {
   if (!car) return <p>Loading...</p>; // або твій Spinner
@@ -9,7 +10,10 @@ const CarCard = ({ car }) => {
 
   return (
     <div className={css.cardContainer}>
-      <img src={car.img} alt="car-card" className={css.carImg} />
+      <div className={css.leftSide}>
+        <img src={car.img} alt="car-card" className={css.carImg} />
+        <RentForm />
+      </div>
       <div className={css.detailsWrapper}>
         <Car car={car} />
         <RentalConditions car={car} />

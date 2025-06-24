@@ -14,3 +14,9 @@
   max-width: 640px;
   height: 512px;
 }
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 640px;
+}

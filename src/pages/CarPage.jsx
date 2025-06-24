@@ -17,7 +17,7 @@ const CarPage = () => {
     return <div>Loading car details...</div>;
   }
   return (
-    <div>
+    <div className="container">
       <CarCard car={car} />
     </div>
   );

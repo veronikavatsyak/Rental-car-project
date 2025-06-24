@@ -15,10 +15,12 @@ a {
   text-decoration: none;
   font-family: inherit;
 }
-input {
+input,
+textarea {
   font-family: inherit;
   border: none;
   outline: none;
+  resize: none;
 }
 img {
   display: block;
