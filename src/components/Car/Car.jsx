@@ -14,7 +14,7 @@ const Car = ({ car }) => {
       <div className={css.addressWrap}>
         <div className={css.addressIconWrap}>
           <svg className={clsx('icon', css.locIcon)} width="16" height="16">
-            <use href="/icons/symbol-defs.svg#icon-Location" />
+            <use href="/icons/sprite.svg#icon-map-pointer" />
           </svg>
           <h3 className={css.carAddress}>
             {city}, {country}

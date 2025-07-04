@@ -2,21 +2,20 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
 import { carsReducer } from './slice';
+import { favouritesReducer } from './favouritesSlice';
 
-const persistConfig = {
-  key: 'root',
+const favouritesPersistConfig = {
+  key: 'favourites',
   storage,
-  //   whitelist: ['favorites'],
 };
 
 const rootReducer = combineReducers({
   cars: carsReducer,
+  favourites: persistReducer(favouritesPersistConfig, favouritesReducer), // ✅ обгортаємо тільки favourites
 });
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
-
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: rootReducer,
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: false,

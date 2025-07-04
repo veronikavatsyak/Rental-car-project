@@ -8,3 +8,4 @@ export const selectTotalPages = state => state.cars.totalPages;
 export const selectCar = state => state.cars.car;
 export const selectFilter = state => state.cars.filters;
 export const selectWasFiltered = state => state.cars.wasFiltered;
+export const selectIsFavourite = state => state.favourites.items;

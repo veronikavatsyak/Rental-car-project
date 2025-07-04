@@ -10,7 +10,7 @@ const CommentInput = () => {
         placeholder="Comment"
         rows={4}
       />
-      <ErrorMessage name="comment" className="error" />
+      <ErrorMessage name="comment" component="div" className="error" />
     </div>
   );
 };

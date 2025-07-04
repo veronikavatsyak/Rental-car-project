@@ -2,6 +2,9 @@ import { formatMileage } from '../../utils/formatMileage';
 import { formatLocation } from '../../utils/formatLocation';
 import css from './CarItem.module.css';
 import ReadMoreLink from '../ReadMoreLink/ReadMoreLink';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsFavourite } from '../../redux/selectors';
+import { toggleFavourite } from '../../redux/favouritesSlice';
 const CarItem = ({ car }) => {
   const {
     year,
@@ -15,9 +18,33 @@ const CarItem = ({ car }) => {
     mileage,
   } = car;
   const [city, country] = formatLocation(address);
+  const dispatch = useDispatch();
+  const favourites = useSelector(selectIsFavourite);
+  const isFavourite = favourites.includes(car.id);
+  const handleToggleFavourite = () => {
+    dispatch(toggleFavourite(car.id));
+  };
   return (
     <div className={css.carContainer}>
-      <img src={img} alt={`${brand} ${model}`} />
+      <div className={css.imageWrapper}>
+        <img src={img} alt={`${brand} ${model}`} />
+        <button className={css.favButton} onClick={handleToggleFavourite}>
+          {isFavourite ? (
+            <svg className={css.filledHeart} viewBox="0 0 16 15">
+              <use href="/icons/sprite.svg#icon-favorite-checked"></use>
+            </svg>
+          ) : (
+            <svg
+              className={css.heart}
+              width="16"
+              height="15"
+              viewBox="0 0 16 15"
+            >
+              <use href="/icons/sprite.svg#icon-favorite" />
+            </svg>
+          )}
+        </button>
+      </div>
       <div className={css.header}>
         <h3 className={css.carName}>
           {brand} <span className={css.carModel}>{model}</span>, {year}

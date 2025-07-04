@@ -6,24 +6,28 @@ import EmailInput from '../EmailInput/EmailInput';
 import BookingDateInput from '../BookingDateInput/BookingDateInput';
 import CommentInput from '../CommentInput/CommentInput';
 import Send from '../Send/Send';
+import toast from 'react-hot-toast';
 const RentForm = () => {
   const initialValues = {
     name: '',
     email: '',
-    bookingDate: '',
+    bookingDate: null,
     comment: '',
   };
   const validationSchema = Yup.object({
     name: Yup.string()
-      .matches(/^[A-Za-z\s'-]+$/, 'Only letters are allowed')
+      .matches(/^[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s'-]+$/, 'Only letters are allowed')
       .required('Required!'),
     email: Yup.string().email('Invalid email').required('Required!'),
-    bookingDate: Yup.string(),
+    bookingDate: Yup.date().typeError('Invalid date').required('Required!'),
     comment: Yup.string(),
   });
-  const handleSubmit = values => {
+  const handleSubmit = (values, actions) => {
     console.log(values);
+    toast.success('The car was successfully booked for the chosen date.');
+    actions.resetForm();
   };
+
   return (
     <Formik
       initialValues={initialValues}

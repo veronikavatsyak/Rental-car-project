@@ -48,3 +48,30 @@ img {
   margin: 0 6px;
   color: #dadde1;
 }
+.imageWrapper {
+  position: relative;
+  width: 100%;
+}
+.favButton {
+  all: unset;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.heart {
+  width: 16px;
+  height: 16px;
+  fill: var(--gray-light);
+  stroke: var(--white);
+  stroke-width: 1;
+}
+
+.filledHeart {
+  width: 16px;
+  height: 16px;
+  fill: var(--button);
+}

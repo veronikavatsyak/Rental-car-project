@@ -151,9 +151,9 @@ label {
 }
 .icon {
   display: inline-block;
-  stroke: black;
-  stroke-width: 1;
-  fill: none;
+  color: var(--main);
+  fill: currentColor;
+  flex-shrink: 0;
 }
 .iconWrap {
   display: flex;
